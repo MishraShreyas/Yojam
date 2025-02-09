@@ -9,7 +9,6 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { HoveredLink, NavItem } from "@/components/Nav/Nav";
 import { Account } from "@/components/Nav/Account";
 
