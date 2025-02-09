@@ -1,21 +1,124 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* @variant dark (&:where(.dark, .dark *));     */
+
+@plugin "tailwindcss-animate";
+
+@theme {
+    --color-background: hsl(var(--background));
+    --color-foreground: hsl(var(--foreground));
+
+    --color-card: hsl(var(--card));
+    --color-card-foreground: hsl(var(--card-foreground));
+
+    --color-popover: hsl(var(--popover));
+    --color-popover-foreground: hsl(var(--popover-foreground));
+
+    --color-primary: hsl(var(--primary));
+    --color-primary-foreground: hsl(var(--primary-foreground));
+
+    --color-secondary: hsl(var(--secondary));
+    --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+    --color-muted: hsl(var(--muted));
+    --color-muted-foreground: hsl(var(--muted-foreground));
+
+    --color-accent: hsl(var(--accent));
+    --color-accent-foreground: hsl(var(--accent-foreground));
+
+    --color-destructive: hsl(var(--destructive));
+    --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+    --color-border: hsl(var(--border));
+    --color-input: hsl(var(--input));
+    --color-ring: hsl(var(--ring));
+
+    --color-chart-1: hsl(var(--chart-1));
+    --color-chart-2: hsl(var(--chart-2));
+    --color-chart-3: hsl(var(--chart-3));
+    --color-chart-4: hsl(var(--chart-4));
+    --color-chart-5: hsl(var(--chart-5));
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@layer base {
+    :root {
+        width: 100%;
+        --background: 0 0% 0%;
+        --foreground: 271.5 5% 90%;
+        --card: 271.5 50% 0%;
+        --card-foreground: 271.5 5% 90%;
+        --popover: 271.5 50% 5%;
+        --popover-foreground: 271.5 5% 90%;
+        --primary: 271.5 81.3% 55.9%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 271.5 30% 10%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 233.5 30% 15%;
+        --muted-foreground: 271.5 5% 60%;
+        --accent: 233.5 30% 15%;
+        --accent-foreground: 271.5 5% 90%;
+        --destructive: 0 100% 30%;
+        --destructive-foreground: 271.5 5% 90%;
+        --border: 271.5 30% 18%;
+        --input: 271.5 30% 18%;
+        --ring: 271.5 81.3% 55.9%;
+        --radius: 0.5rem;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+        --sidebar-background: 240 5.9% 10%;
+        --sidebar-foreground: 240 4.8% 95.9%;
+        --sidebar-primary: 224.3 76.3% 48%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 240 3.7% 15.9%;
+        --sidebar-accent-foreground: 240 4.8% 95.9%;
+        --sidebar-border: 240 3.7% 15.9%;
+        --sidebar-ring: 217.2 91.2% 59.8%;
+    }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    button {
+        cursor: pointer;
+    }
+}
+
+@utility angle-15 {
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
+}
+
+@utility skew-section {
+    clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+}
+
+@utility zigzag {
+    clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%);
+}
+
+@utility angle-shadow {
+    box-shadow: 15px -15px 30px rgba(125, 74, 234, 0.2);
+    transform: perspective(500px) rotateX(15deg);
+}
+
+@utility gradient-border {
+    border-image: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+    border-image-slice: 1;
+}
+
+@utility angle-transition {
+    transition: clip-path 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
