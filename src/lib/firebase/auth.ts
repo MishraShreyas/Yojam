@@ -25,6 +25,7 @@ export const signOutUser = async () => {
     try {
         await signOut(auth);
         await fetch('/api/logout');
+        window.location.reload();
     } catch (error) {
         console.error('Error signing out', error);
         throw error;

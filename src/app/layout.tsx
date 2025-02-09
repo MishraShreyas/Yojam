@@ -54,7 +54,6 @@ export default async function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    console.log(clientConfig, serverConfig);
     const tokens = await getTokens(await cookies(), {
         apiKey: clientConfig.apiKey,
         cookieName: serverConfig.cookieName,

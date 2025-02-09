@@ -10,6 +10,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { signOutUser } from "@/lib/firebase/auth";
 import { User, LogOut, Settings } from "lucide-react";
 
 export function Account() {
@@ -50,7 +51,7 @@ export function Account() {
                     Settings
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="text-red-600">
+                <DropdownMenuItem onClick={signOutUser} className="text-red-600">
                     <LogOut className="mr-2 h-4 w-4" />
                     Log out
                 </DropdownMenuItem>

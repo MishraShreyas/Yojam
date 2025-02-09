@@ -15,7 +15,7 @@ export default function LoginPage() {
     const handleGoogleSignIn = async () => startTransition(async () => {
         try {
             await signInWithGoogle();
-            router.push('/');
+            router.refresh();
         } catch (error) {
             console.error('Login failed:', error);
         }
