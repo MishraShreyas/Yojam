@@ -11,47 +11,53 @@ import {
 import { Divider } from "@/components/ui/divider";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { FeaturesSection } from "@/components/Landing/Features";
+// import WavingLogo from "@/components/Landing/WavingLogo";
 
 export default function HomePage() {
     return (
         <div className="min-h-screen">
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
-                <WavyBackground className="text-center space-y-6 max-w-4xl px-4 mx-auto text-white">
+                <WavyBackground className="text-center space-y-6 max-w-4xl px-4 mx-auto text-white" speed="slow">
 
-                    {/* <div className="absolute inset-0 bg-[url('/sacred-geometry.svg')] bg-no-repeat bg-center opacity-10 animate-spin duration-10000" /> */}
-                    <h1 className="text-6xl font-bold animate-in slide-in-from-bottom-full fade-in ease-in-out duration-1000">
-                        Find Your Inner Peace with Yojam
-                    </h1>
-                    <p className="text-xl">Journey through meditation, tarot readings, and yoga practices</p>
+                    <div className="relative">
+                        <div className="absolute bottom-full -translate-y-8 md:-translate-y-16 left-1/2 -translate-x-1/2">
+                            {/* <WavingLogo /> */}
+                        </div>
+                        <h1 className="text-6xl font-bold animate-in slide-in-from-bottom-full fade-in ease-in-out duration-1000">
+                            Find Your Inner Peace with Yojam
+                        </h1>
+                    </div>
+                    <div className="relative">
+                        <p className="text-xl">
+                            Journey through meditation, tarot readings, and yoga practices
+                        </p>
 
-
-
-
-                    <div className="absolute inset-x-0 bottom-10 flex flex-col items-center w-full">
-                        {/* Live Session Counter */}
-                        <section className="py-8">
-                            <div className="max-w-7xl mx-auto px-4 flex justify-center gap-8">
-                                <div className="text-center">
-                                    <h3 className="text-3xl font-bold text-purple-400">42</h3>
-                                    <p className="text-slate-300">Live Sessions</p>
-                                </div>
-                                <div className="text-center">
-                                    <h3 className="text-3xl font-bold text-purple-400">1.2k+</h3>
-                                    <p className="text-slate-300">Active Members</p>
-                                </div>
-                                <div className="text-center">
-                                    <h3 className="text-3xl font-bold text-purple-400">98%</h3>
-                                    <p className="text-slate-300">Satisfaction Rate</p>
+                        <div className="absolute inset-x-0 top-full translate-y-8 md:translate-y-16 flex flex-col items-center w-full">
+                            {/* Live Session Counter */}
+                            <div className="py-8">
+                                <div className="max-w-7xl mx-auto px-4 flex justify-center gap-8">
+                                    <div className="text-center">
+                                        <h3 className="text-3xl font-bold text-purple-400">42</h3>
+                                        <p className="text-slate-300">Live Sessions</p>
+                                    </div>
+                                    <div className="text-center">
+                                        <h3 className="text-3xl font-bold text-purple-400">1.2k+</h3>
+                                        <p className="text-slate-300">Active Members</p>
+                                    </div>
+                                    <div className="text-center">
+                                        <h3 className="text-3xl font-bold text-purple-400">98%</h3>
+                                        <p className="text-slate-300">Satisfaction Rate</p>
+                                    </div>
                                 </div>
                             </div>
-                        </section>
 
-                        <a href="/login">
-                            <Button size="lg" className="">
-                                Begin Your Journey
-                            </Button>
-                        </a>
+                            <a href="/login">
+                                <Button size="lg" className="">
+                                    Begin Your Journey
+                                </Button>
+                            </a>
+                        </div>
                     </div>
                 </WavyBackground>
             </section>

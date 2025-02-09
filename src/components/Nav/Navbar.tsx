@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { HoveredLink, NavItem } from "@/components/Nav/Nav";
 import { Account } from "@/components/Nav/Account";
+import Image from "next/image";
 
 export const Header = ({ className }: {
     className?: string;
@@ -62,7 +63,14 @@ export const Header = ({ className }: {
                     className="container mx-auto flex justify-between items-center pr-2 pl-8 py-2 w-full h-full"
                 >
                     <div className="flex">
-                        <Link href="/" className="text-2xl font-bold mr-8">
+                        <Link href="/" className="text-2xl font-bold mr-8 flex items-center">
+                            <Image
+                                src="/Yojam-Logo.png"
+                                alt="Yojam Logo"
+                                width={40}
+                                height={40}
+                                className="mr-2"
+                            />
                             Yojam
                         </Link>
                         <nav className="hidden md:flex space-x-4">

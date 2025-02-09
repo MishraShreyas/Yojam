@@ -73,7 +73,7 @@ export const WavyBackground = ({
     ];
     const drawWave = (n: number) => {
         if (!ctx) return;
-        nt += getSpeed();
+        nt += getSpeed() / 2;
         for (i = 0; i < n; i++) {
             ctx.beginPath();
             ctx.lineWidth = waveWidth || 50;
